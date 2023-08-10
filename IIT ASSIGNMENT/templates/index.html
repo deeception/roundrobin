@@ -1,0 +1,73 @@
+{% extends 'base.html' %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+<div class="jumbotron animated-fadeIn">
+    <h1 class="display-4">Welcome to the Ticketing System by Deependra Singh</h1>
+    <p class="lead">Backend Web Development Assessment by IIT Madras</p>
+    <hr class="my-4">
+    <p>
+        <a href="{{ url_for('assign_ticket') }}" class="btn btn-primary btn-lg">Assign Ticket</a>
+        <a href="{{ url_for('ticket_list') }}" class="btn btn-secondary btn-lg">View Assigned Tickets</a>
+    </p>
+</div>
+
+<h2 class="animated-fadeIn">People</h2>
+<div class="table-responsive animated-fadeIn">
+    <a href="{{ url_for('add_user') }}" class="btn btn-success">Add User</a>
+    <div class="status-bar animated-fadeIn">
+        <p>Number of People: {{ people|length }}<br>Total Tickets Assigned: {{ total_tickets_assigned }}</p>
+    </div>
+    <table class="table table-bordered table-striped mt-3">
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Name</th>
+                <th scope="col">ID</th>
+                <th scope="col">Contact Number</th>
+                <th scope="col">Tickets Assigned</th>
+                <th scope="col">Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for person in people %}
+            <tr>
+                <th scope="row">{{ loop.index }}</th>
+                <td>{{ person.name }}</td>
+                <td>{{ person.id }}</td>
+                <td>{{ person.contact }}</td>
+                <td>{{ person.tickets_assigned|length }}</td>
+                <td>
+                    <form method="post" action="{{ url_for('delete_user', id=person.id) }}">
+                        <button type="submit" class="btn btn-danger btn-sm">Delete</button>
+                    </form>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+<div class="contact-info animated-fadeIn">
+    <h2>Contact Information</h2>
+    <div class="row">
+        <div class="col-md-6">
+            <a href="https://github.com/deeception" target="_blank"><img src="{{ url_for('static', filename='github.png') }}" alt="GitHub"></a>
+            <a href="https://github.com/deeception" target="_blank">GitHub</a>
+        </div>
+        <div class="col-md-6">
+            <a href="https://www.linkedin.com/in/deependraksingh/" target="_blank"><img src="{{ url_for('static', filename='linkedin.png') }}" alt="LinkedIn"></a>
+            <a href="https://www.linkedin.com/in/deependraksingh/" target="_blank">LinkedIn</a>
+        </div>
+        <div class="col-md-6">
+            <a href="mailto:deependrakumar.nx@gmail.com"><img src="{{ url_for('static', filename='email.png') }}" alt="Email"></a>
+            <a href="mailto:deependrakumar.nx@gmail.com">Email</a>
+        </div>
+        <div class="col-md-6">
+            <a href="tel:+919359840082"><img src="{{ url_for('static', filename='phone.png') }}" alt="Phone"></a>
+            <a href="tel:+919359840082">Phone</a>
+        </div>
+    </div>
+</div>
+{% endblock %}

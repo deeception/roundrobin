@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block title %}Assigned Tickets{% endblock %}
+
+{% block content %}
+<h1>Assigned Tickets</h1>
+{% if tickets %}
+    <table class="table table-bordered table-striped">
+        <thead>
+            <tr>
+                <th>Ticket Number</th>
+                <th>Issue Description</th>
+                <th>Assigned To</th>
+                <th>Raised By</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for ticket in tickets %}
+            <tr>
+                <td>{{ ticket.id }}</td>
+                <td>{{ ticket.issue_description }}</td>
+                <td>ID - {{ ticket.assigned_to.id }}<br>Name - {{ ticket.assigned_to.name }} </td>
+                <td>ID - {{ ticket.raised_by.id }} <br>Name - {{ ticket.raised_by.name }} </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% else %}
+    <p>There are no tickets raised.</p>
+{% endif %}
+<br>
+<div class="d-flex justify-content-between">
+    <a href="{{ url_for('index') }}" class="btn btn-secondary">Back to Home</a>
+    <a href="{{ url_for('assign_ticket') }}" class="btn btn-primary">Assign a Ticket</a>
+</div>
+{% endblock %}
