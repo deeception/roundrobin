@@ -1,17 +1,15 @@
-![assign ticket](https://github.com/deeception/roundrobin/assets/103402113/623afb4a-f976-4dec-9434-7659da849358)
 #Ticketing System - REST API Project
 This project demonstrates a REST API Ticketing System developed as part of a Backend Web Development assessment. The system is designed to efficiently assign incoming tickets to individuals based on the Round Robin Principle.
 
-![homepage](https://github.com/deeception/roundrobin/assets/103402113/3fb8f85a-28a9-4359-bcc5-bb041bf3d85e)
+![homepage](https://github.com/deeception/roundrobin/assets/103402113/12ad5302-cc7c-40ae-a48c-ce34caee0e2d)
 
+![Add user](https://github.com/deeception/roundrobin/assets/103402113/dba712d2-ceeb-467b-ac3e-450b7a420980)
+![assign ticket](https://github.com/deeception/roundrobin/assets/103402113/85774d35-7092-41f0-acf3-23442d0471e9)
+![submit request](https://github.com/deeception/roundrobin/assets/103402113/62ac0db8-02d8-4918-b37b-7dfcc808ad4d)
+![Assigned tickets](https://github.com/deeception/roundrobin/assets/103402113/0a8053e2-6914-43d0-ac4b-b68607e7b5d2)
 
 #Objective
 The objective of this project was to build a Ticketing System that automatically allocates new tickets to users using the Round Robin Principle.
-
-![Add user](https://github.com/deeception/roundrobin/assets/103402113/251eac7d-c86d-4f75-9580-fc6219c6f916)
-![Uploading submit request.png…]()
-![Uploading Assigned tickets.png…]()
-
 
 #Technologies Used
 1. Python Flask: Used for backend development, REST API creation, and request handling.
